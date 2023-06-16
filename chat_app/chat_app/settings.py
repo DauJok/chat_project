@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     # Project apps
     "server",
     "account",
+    # Django packages
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +118,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Defining default project user model.
 AUTH_USER_MODEL = "account.Account"
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Project API",
+    "DESCRIPTION": "Project description",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
