@@ -132,5 +132,5 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "Project API",
     "DESCRIPTION": "Project description",
     "VERSION": "1.0.0",
-    "SERVE_INCLUDE_SCHEMA": False,
+    "SERVE_INCLUDE_SCHEMA": True,
 }
