@@ -1,5 +1,7 @@
+import { ThemeProvider } from "@mui/material";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "../node_modules/react-router-dom/dist/index"
 import Home from "./pages/Home";
+import createMuiTheme from "./theme/theme";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -10,7 +12,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  const theme = createMuiTheme() // Passing global styling theme to components.
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>);
 };
 
 export default App;
